@@ -1,0 +1,23 @@
+{
+    "short_name": "AIMS",
+    "name": "AIMS | ChiragChrg",
+    "start_url": ".",
+    "id": "/",
+    "display": "standalone",
+    "theme_color": "#FAFAFA",
+    "background_color": "#FAFAFA",
+    "description": "Aloysius Institute Management System (AIMS) is a management software developed to manage student and the institution",
+    "dir": "ltr",
+    "lang": "en",
+    "orientation": "portrait",
+    "display_override": [
+        "standalone",
+        "fullscreen"
+    ],
+    "categories": [
+        "productivity",
+        "education",
+        "social"
+    ],
+    "prefer_related_applications": false
+}
