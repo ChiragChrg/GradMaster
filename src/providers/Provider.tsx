@@ -5,12 +5,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { SessionProvider } from 'next-auth/react'
 import { Toaster } from 'react-hot-toast'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ThemeProvider } from 'next-themes'
+import { type ThemeProviderProps } from 'next-themes/dist/types'
 
-type Props = {
-    children?: React.ReactNode,
-}
 
-const Provider = ({ children }: Props) => {
+const Provider = ({ children, ...props }: ThemeProviderProps) => {
     const [isMounted, setIsMounted] = useState<boolean>(false)
 
     useEffect(() => {
@@ -28,12 +27,14 @@ const Provider = ({ children }: Props) => {
     if (isMounted)
         return (
             <QueryClientProvider client={queryClient}>
-                <SessionProvider>
-                    {children}
-                </SessionProvider>
+                <ThemeProvider {...props}>
+                    <SessionProvider>
+                        {children}
+                    </SessionProvider>
 
-                <Toaster position='bottom-right' />
-                <ReactQueryDevtools initialIsOpen={false} />
+                    <Toaster position='bottom-right' />
+                    <ReactQueryDevtools initialIsOpen={false} />
+                </ThemeProvider>
             </QueryClientProvider>
         )
 }
