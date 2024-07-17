@@ -1,12 +1,41 @@
 {
     "short_name": "GradMaster",
     "name": "GradMaster | ChiragChrg",
+    "icons": [
+        {
+            "src": "./Icons/144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "./Icons/192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "./Icons/temp_wide_screenshot.png",
+            "sizes": "768x359",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Welcome to GradMaster"
+        },
+        {
+            "src": "./Icons/temp_screenshot.png",
+            "sizes": "354x787",
+            "type": "image/png",
+            "label": "Welcome to GradMaster"
+        }
+    ],
     "start_url": ".",
     "id": "/",
     "display": "standalone",
     "theme_color": "#FFF",
     "background_color": "#FFF",
-    "description": "GradMaster is an all-in-one university management software designed to streamline academic administration. From student enrollment to faculty management and course scheduling, GradMaster enhances efficiency and improves the educational experience. Discover the future of university administration with our powerful and user-friendly platform.",
+    "description": "GradMaster is an all-in-one university management software designed to streamline academic administration. From student enrollment to faculty management and course scheduling, GradMaster enhances efficiency and improves the educational experience.",
     "dir": "ltr",
     "lang": "en",
     "orientation": "portrait",
