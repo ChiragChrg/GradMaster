@@ -1,5 +1,5 @@
 import React from 'react'
-import LogoSVG from './LogoSVG'
+import LogoSVG from './CustomUI/LogoSVG'
 
 const Header = () => {
     return (

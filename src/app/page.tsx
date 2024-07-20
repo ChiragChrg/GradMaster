@@ -1,9 +1,10 @@
 "use client"
 
 import Header from "@/components/Header";
-import LogoSVG from "@/components/LogoSVG";
+import LogoSVG from "@/components/CustomUI/LogoSVG";
 import PWA from "@/lib/pwa";
 import { useEffect } from "react";
+import { HeroHighlight, Highlight } from "@/components/CustomUI/dotBackground";
 
 export default function Home() {
   useEffect(() => {
@@ -12,12 +13,14 @@ export default function Home() {
 
   return (
     <main className="">
-      <Header />
+      <HeroHighlight>
+        <Header />
 
-      <div className="flex_center mt-[10em]">
-        <LogoSVG color="hsl(var(--primary))" />
-        <span className="Hero_Waves animate-ripple"></span>
-      </div>
+        <div className="flex_center mt-[10em]">
+          <LogoSVG color="hsl(var(--primary))" />
+          <span className="Hero_Waves animate-ripple"></span>
+        </div>
+      </HeroHighlight>
     </main>
   );
 }
