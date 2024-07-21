@@ -1,9 +1,10 @@
 import React from 'react'
 import LogoSVG from './CustomUI/LogoSVG'
+import ThemeButton from './CustomUI/ThemeButton'
 
 const Header = () => {
     return (
-        <div className='w-full flex justify-between items-center px-4 py-4'>
+        <header className='w-full flex justify-between items-center px-4 py-4'>
             <a href="/" className='flex_center gap-4'>
                 <LogoSVG size={60} color='hsl(var(--primary))' />
                 {/* <h1 className='text-[2em] font-bold'>GradMaster</h1> */}
@@ -12,9 +13,11 @@ const Header = () => {
             <nav className="flex justify-between items-center gap-4">
                 <a href="#">About</a>
                 <a href="#">Contact</a>
-                <a className='ml-6 bg-primary p-2 rounded-md text-white' href="#">Get Started</a>
+
+                <ThemeButton />
+                <a className='bg-primary px-4 py-2 rounded-md text-white' href="#">Get Started</a>
             </nav>
-        </div>
+        </header>
     )
 }
 

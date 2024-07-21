@@ -12,16 +12,14 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="">
-      <HeroHighlight>
-        <Header />
+    <HeroHighlight>
+      <Header />
 
-        <div className=" relative flex_center mt-[10em]">
-          <LogoSVG color="hsl(var(--primary))" className="z-10" />
-          <span className="absolute bg-primary/30 w-[500px] aspect-square rounded-full opacity-0 animate-ripple"></span>
-          <span className="absolute bg-primary/30 w-[500px] aspect-square rounded-full opacity-0 animate-ripple delay-1000"></span>
-        </div>
-      </HeroHighlight>
-    </main>
+      <div className=" relative flex_center mt-[10em]">
+        <LogoSVG color="hsl(var(--primary))" className="z-10" />
+        <span className="absolute bg-primary/30 w-[500px] aspect-square rounded-full opacity-0 animate-ripple"></span>
+        <span className="absolute bg-primary/30 w-[500px] aspect-square rounded-full opacity-0 animate-ripple delay-1000"></span>
+      </div>
+    </HeroHighlight>
   );
 }
