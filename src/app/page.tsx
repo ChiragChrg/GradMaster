@@ -16,9 +16,10 @@ export default function Home() {
       <HeroHighlight>
         <Header />
 
-        <div className="flex_center mt-[10em]">
-          <LogoSVG color="hsl(var(--primary))" />
-          <span className="Hero_Waves animate-ripple"></span>
+        <div className=" relative flex_center mt-[10em]">
+          <LogoSVG color="hsl(var(--primary))" className="z-10" />
+          <span className="absolute bg-primary/30 w-[500px] aspect-square rounded-full opacity-0 animate-ripple"></span>
+          <span className="absolute bg-primary/30 w-[500px] aspect-square rounded-full opacity-0 animate-ripple delay-1000"></span>
         </div>
       </HeroHighlight>
     </main>
