@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss"
 
+import svgToDataUri from "mini-svg-data-uri";
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -70,14 +76,55 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "ripple": {
+          from: {
+            scale: "0",
+            opacity: "1"
+          },
+          to: {
+            scale: "1",
+            opacity: "0"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "ripple": "ripple 2.5s ease-in-out infinite"
       },
+      backgroundImage: {
+        'radialGradient': 'radial-gradient(circle, transparent, hsla(var(--primary)/ 0.25), hsla(var(--primary)/ 0.5), hsl(var(--primary)) 100%)',
+      }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    addVariablesForColors,
+    function ({ matchUtilities, theme }: any) {
+      matchUtilities(
+        {
+          "bg-dot-thick": (value: any) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+            )}")`,
+          }),
+        },
+        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+      );
+    },
+
+  ],
 } satisfies Config
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
 
 export default config
