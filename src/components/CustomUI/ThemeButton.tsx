@@ -1,5 +1,7 @@
-import { useTheme } from 'next-themes'
+"use client"
+
 import React from 'react'
+import { useTheme } from 'next-themes'
 import { Button } from '../ui/button'
 import { SunIcon, MoonIcon } from "lucide-react"
 

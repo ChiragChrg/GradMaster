@@ -90,8 +90,11 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "ripple": "ripple 2.5s ease-out infinite"
+        "ripple": "ripple 2.5s ease-in-out infinite"
       },
+      backgroundImage: {
+        'radialGradient': 'radial-gradient(circle, transparent, hsla(var(--primary)/ 0.25), hsla(var(--primary)/ 0.5), hsl(var(--primary)) 100%)',
+      }
     },
   },
   plugins: [
